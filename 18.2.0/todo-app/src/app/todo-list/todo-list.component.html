@@ -1,0 +1,14 @@
+<h1>To-Do List</h1>
+
+<form (submit)="addTodo(); $event.preventDefault()">
+  <input type="text" [(ngModel)]="newTodoText" name="todoText" placeholder="Enter a new task" required>
+  <button type="submit">Add</button>
+</form>
+
+<ul class="todo-list">
+  <li *ngFor="let todo of todos; let i = index" class="todo-item">
+    <input type="checkbox" [checked]="todo.completed" (change)="toggleComplete(i)">
+    <span [class.completed]="todo.completed">{{ todo.text }}</span>
+    <button (click)="removeTodo(i)" class="remove-button">Remove</button>
+  </li>
+</ul>

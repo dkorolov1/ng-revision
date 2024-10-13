@@ -1,0 +1,17 @@
+.todo-list {
+    list-style-type: none;
+
+    .todo-item {
+        padding-bottom: 10px;
+    
+        .completed {
+            text-decoration: line-through;
+        }
+        
+        .remove-button {
+            margin-left: 10px;
+        }
+    }
+}
+
+
