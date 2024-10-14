@@ -1,0 +1,16 @@
+@model TodoApp.Models.TodoItem
+
+<h2>Add New Item</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label for="Description">Description</label>
+        @Html.TextBoxFor(m => m.Description)
+        @Html.ValidationMessageFor(m => m.Description)
+    </div>
+
+    <div>
+        <input type="submit" value="Add Item" />
+    </div>
+}
