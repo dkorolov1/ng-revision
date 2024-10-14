@@ -4,7 +4,7 @@
     .todo-item {
         padding-bottom: 10px;
     
-        .completed {
+        &.completed .item-text{
             text-decoration: line-through;
         }
         

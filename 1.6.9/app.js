@@ -1,8 +1,8 @@
 // Create the app
-var app = angular.module('toDoListApp', []);
+var app = angular.module('todoListApp', []);
 
 // Controller to manage the to-do list
-app.controller('ToDoListController', $scope => {
+app.controller('TodoListController', $scope => {
     // Initial list of tasks (to-dos)
     $scope.todos = [
         { text: 'Learn AngularJS 1.6', completed: false },

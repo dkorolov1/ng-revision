@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="toDoListApp">
+<html ng-app="todoListApp">
 <head>
     <meta charset="UTF-8">
     <title>AngularJS 1.6 To-Do List</title>
@@ -12,12 +12,12 @@
         .todo-item {
             margin-bottom: 10px;
         }
-        .todo-item .completed {
+        .todo-item.completed .item-text{
             text-decoration: line-through;
         }
     </style>
 </head>
-<body ng-controller="ToDoListController">
+<body ng-controller="TodoListController">
 
     <h1>To-Do List</h1>
 
@@ -29,9 +29,9 @@
 
     <!-- List of tasks with options to mark as completed and remove -->
     <ul class="todo-list">
-        <li ng-repeat="todo in todos" class="todo-item">
+        <li ng-repeat="todo in todos" class="todo-item" ng-class="{'completed': todo.completed}">
             <input type="checkbox" ng-model="todo.completed"> 
-            <span ng-class="{'completed': todo.completed}">{{ todo.text }}</span>
+            <span class="item-text">{{ todo.text }}</span>
             <button ng-click="removeTodo($index)">Remove</button>
         </li>
     </ul>

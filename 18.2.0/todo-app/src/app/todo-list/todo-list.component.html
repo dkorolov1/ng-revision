@@ -6,9 +6,9 @@
 </form>
 
 <ul class="todo-list">
-  <li *ngFor="let todo of todos; let i = index" class="todo-item">
+  <li *ngFor="let todo of todos; let i = index" class="todo-item" [class.completed]="todo.completed">
     <input type="checkbox" [checked]="todo.completed" (change)="toggleComplete(i)">
-    <span [class.completed]="todo.completed">{{ todo.text }}</span>
+    <span class="item-text">{{ todo.text }}</span>
     <button (click)="removeTodo(i)" class="remove-button">Remove</button>
   </li>
 </ul>
